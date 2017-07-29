@@ -1,0 +1,212 @@
+[04/Jan/2016 14:45:45] INFO - JARVIS2: Loading Text Analytics modules now...
+[04/Jan/2016 14:45:45] INFO - JARVIS2: Loading the classifier. This should take less than a minute...
+[04/Jan/2016 14:45:55] INFO - Setting agent status to: 30
+[04/Jan/2016 14:46:01] INFO - JARVIS2: Connecting XMPP...
+[04/Jan/2016 14:46:01] INFO - JARVIS2: Ready to process messages...
+[04/Jan/2016 14:46:03] INFO - JID set to: chappie@stage-c.magictiger.com/realm
+[04/Jan/2016 14:46:03] WARNING - TLS or SSL was enabled, but no certificate was found.
+[04/Jan/2016 14:46:03] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="50" consumer="52" chat_thread="1088" id="6a10deb4-8178-4af2-a47a-5602af8623ba-1451898970899" to="chappie@stage-c.magictiger.com/realm" sent_on="1451898970899" type="chat" xml:lang="en" mt_routed="true"><body>{&quot;_mt_cmmd&quot;:{&quot;assigned_by&quot;:&quot;ajith&quot;,&quot;timestamp&quot;:1451898970897,&quot;user&quot;:&quot;9845381180&quot;,&quot;assigned_to&quot;:&quot;chappie&quot;,&quot;assigned_from&quot;:&quot;ajith&quot;,&quot;type&quot;:&quot;ASSIGN&quot;}}</body><markable xmlns="urn:xmpp:chat-markers:0" /><delay xmlns="urn:xmpp:delay" stamp="2016-01-04T09:16:10.920Z" from="stage-c.magictiger.com">Offline Storage</delay><x xmlns="jabber:x:delay" stamp="20160104T09:16:10" from="stage-c.magictiger.com">Offline Storage</x></message>
+[04/Jan/2016 14:46:03] INFO - Received Tick
+[04/Jan/2016 14:46:03] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="6a10deb4-8178-4af2-a47a-5602af8623ba-1451898970899">6a10deb4-8178-4af2-a47a-5602af8623ba-1451898970899</received></message>
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:46:03] INFO - Displayed Tick
+[04/Jan/2016 14:46:03] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="6a10deb4-8178-4af2-a47a-5602af8623ba-1451898970899">6a10deb4-8178-4af2-a47a-5602af8623ba-1451898970899</displayed></message>
+[04/Jan/2016 14:46:03] INFO - Ignoring assignment message.
+[04/Jan/2016 14:46:25] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="10" consumer="52" chat_thread="1088" id="e6548839-e9af-4514-92ef-9a05e8632df7" to="chappie@stage-c.magictiger.com/realm" sent_on="1451898993699" type="chat" xml:lang="en" mt_routed="true"><body>Hello</body><markable xmlns="urn:xmpp:chat-markers:0" /></message>
+[04/Jan/2016 14:46:25] INFO - Received Tick
+[04/Jan/2016 14:46:25] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="e6548839-e9af-4514-92ef-9a05e8632df7">e6548839-e9af-4514-92ef-9a05e8632df7</received></message>
+[04/Jan/2016 14:46:25] INFO - Displayed Tick
+[04/Jan/2016 14:46:25] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="e6548839-e9af-4514-92ef-9a05e8632df7">e6548839-e9af-4514-92ef-9a05e8632df7</displayed></message>
+[04/Jan/2016 14:46:25] INFO - Text message request: Hello
+[04/Jan/2016 14:46:25] INFO - Extracting chat id...
+[04/Jan/2016 14:46:25] INFO - 9845381180
+[04/Jan/2016 14:46:27] INFO - {u'text': u'9845381180', u'length': 10, u'options': [{u'text': u'9845381180', u'score': 1.0, u'payload': {u'id': 52, u'name': u'Ajith Ramanath'}}], u'offset': 0}
+[04/Jan/2016 14:46:27] INFO - [{u'text': u'9845381180', u'score': 1.0, u'payload': {u'id': 52, u'name': u'Ajith Ramanath'}}]
+[04/Jan/2016 14:46:27] INFO - 52
+[04/Jan/2016 14:46:31] INFO - Ajith Ramanath
+[04/Jan/2016 14:46:31] INFO - Name: Ajith
+[04/Jan/2016 14:46:35] INFO - {"account":52,"mobile":"9845381180","name":null,"email":"mail2ajith@gmail.com","profile_data":{"mobile":"9845381180","url":"https://podio.com/magictiger/agent-panel/apps/customer-management/items/1081","name":"Ajith Ramnath","paytm":{"mobile":"9845381180","walletBalance":0,"email":"mail2ajith@gmail.com"}},"devices":[{"id":"493185332f36ec1e","platform":"ANDROID","token":"dK2FwPPvTa4:APA91bFcx6UXuaMybVlzZmp2RRZzKlPEjg2GU84Kc0I8quLkvPC29pHV_iBXBRfa8Xlb21yJejlzzO2L0U2e33tlaX7auQLEp2WxencIanD1tIJrDowrUSYeaDP-H-catVPElFBUgTfh","client_version":20,"location":{"geometry":{"type":"Point","coordinates":[77.6370235,12.9668883]},"type":"Feature","properties":{"updated_on":1451377683276,"accuracy":57.0}},"status":10,"account":52,"created_on":1448607006548,"updated_on":1451898983151}]}
+[04/Jan/2016 14:46:35] INFO - 12.9668883,77.6370235
+[04/Jan/2016 14:46:36] INFO - {u'city': u'Bengaluru', u'state_district': u'Bangalore Urban', u'house_number': u'3777', u'country': u'India', u'county': u'Bangalore Urban', u'suburb': u'Domlur', u'state': u'Karnataka', u'road': u'11th Cross', u'country_code': u'in', u'neighbourhood': u'HAL 2nd Stage', u'postcode': u'560001'}
+[04/Jan/2016 14:46:52] INFO - {'Username': u'Ajith', 'intents': [], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6370235, 12.9668883]}, "type": "Feature", "properties": {"updated_on": 1451377683276, "accuracy": 57.0}}, "zipcode": "560001", "address": {"street": "3777, 11th Cross, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': False, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:46:52] INFO - 
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:46:52] INFO - Intent = []
+[04/Jan/2016 14:46:52] INFO - ['routing', 'intent']
+[04/Jan/2016 14:47:08] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="10" consumer="52" chat_thread="1088" id="bff7023f-881e-4b0b-8ab1-a181e8747030" to="chappie@stage-c.magictiger.com/realm" sent_on="1451899036455" type="chat" xml:lang="en" mt_routed="true"><body>I want to book beauty services</body><markable xmlns="urn:xmpp:chat-markers:0" /></message>
+[04/Jan/2016 14:47:08] INFO - Received Tick
+[04/Jan/2016 14:47:08] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="bff7023f-881e-4b0b-8ab1-a181e8747030">bff7023f-881e-4b0b-8ab1-a181e8747030</received></message>
+[04/Jan/2016 14:47:08] INFO - Displayed Tick
+[04/Jan/2016 14:47:08] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="bff7023f-881e-4b0b-8ab1-a181e8747030">bff7023f-881e-4b0b-8ab1-a181e8747030</displayed></message>
+[04/Jan/2016 14:47:08] INFO - Text message request: I want to book beauty services
+[04/Jan/2016 14:47:18] INFO - {'Username': u'Ajith', 'intents': [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6370235, 12.9668883]}, "type": "Feature", "properties": {"updated_on": 1451377683276, "accuracy": 57.0}}, "zipcode": "560001", "address": {"street": "3777, 11th Cross, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': False, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:47:18] INFO - want
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:47:18] INFO - Intent = [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}]
+[04/Jan/2016 14:47:18] INFO - []
+[04/Jan/2016 14:47:18] INFO - Routing to human agent now...
+[04/Jan/2016 14:47:19] INFO - Chat id: 1088
+[04/Jan/2016 14:47:19] INFO - Order info: {'Username': u'Ajith', 'intents': [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6370235, 12.9668883]}, "type": "Feature", "properties": {"updated_on": 1451377683276, "accuracy": 57.0}}, "zipcode": "560001", "address": {"street": "3777, 11th Cross, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': True, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:47:19] INFO - Input team = general
+[04/Jan/2016 14:47:20] INFO - Got list of agents...
+[04/Jan/2016 14:47:20] INFO - Got list of active agents...
+[04/Jan/2016 14:47:26] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:26] INFO - [{u'status': 10, u'id': 9, u'team': u'pilot'}, {u'status': 20, u'id': 8, u'team': u'general'}, {u'status': 20, u'id': 7, u'team': u'general'}]
+[04/Jan/2016 14:47:26] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:47:26] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:47:26] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:26] INFO - []
+[04/Jan/2016 14:47:27] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:27] INFO - []
+[04/Jan/2016 14:47:28] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:28] INFO - []
+[04/Jan/2016 14:47:30] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:30] INFO - [{u'status': 10, u'id': 1, u'team': u'general'}]
+[04/Jan/2016 14:47:30] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:47:31] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:31] INFO - []
+[04/Jan/2016 14:47:32] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:32] INFO - []
+[04/Jan/2016 14:47:32] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:32] INFO - []
+[04/Jan/2016 14:47:35] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:35] INFO - []
+[04/Jan/2016 14:47:35] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:35] INFO - []
+[04/Jan/2016 14:47:36] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:36] INFO - []
+[04/Jan/2016 14:47:37] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:37] INFO - []
+[04/Jan/2016 14:47:37] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:37] INFO - []
+[04/Jan/2016 14:47:38] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:38] INFO - []
+[04/Jan/2016 14:47:39] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:39] INFO - [{u'status': 10, u'id': 4, u'team': u'pilot'}]
+[04/Jan/2016 14:47:39] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:39] INFO - []
+[04/Jan/2016 14:47:42] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:42] INFO - []
+[04/Jan/2016 14:47:43] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:43] INFO - []
+[04/Jan/2016 14:47:43] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:43] INFO - []
+[04/Jan/2016 14:47:44] INFO - Got agent team/skills...
+[04/Jan/2016 14:47:44] INFO - [{u'status': 10, u'id': 6, u'team': u'pilot'}]
+[04/Jan/2016 14:47:44] INFO - [{u'status': 30, u'username': u'ajith', u'max_concurrent_chats': 3, u'num_assigned_chats': 3, u'password': u'144fd25c', u'id': 65}, {u'status': 30, u'username': u'recharge_bot', u'max_concurrent_chats': 65535, u'num_assigned_chats': 184, u'password': u'021c556d', u'id': 170}, {u'status': 30, u'username': u'recharge_bot', u'max_concurrent_chats': 65535, u'num_assigned_chats': 184, u'password': u'021c556d', u'id': 170}]
+[04/Jan/2016 14:47:44] INFO - Agent to route: {"status": 30, "username": "ajith", "max_concurrent_chats": 3, "num_assigned_chats": 3, "password": "144fd25c", "id": 65}
+[04/Jan/2016 14:48:06] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="50" consumer="52" chat_thread="1088" id="0d1183a0-39bb-45f2-913d-4b360c782bb1-1451899094349" to="chappie@stage-c.magictiger.com/realm" sent_on="1451899094349" type="chat" xml:lang="en" mt_routed="true"><body>{&quot;_mt_cmmd&quot;:{&quot;assigned_by&quot;:&quot;ajith&quot;,&quot;timestamp&quot;:1451899094347,&quot;user&quot;:&quot;9845381180&quot;,&quot;assigned_to&quot;:&quot;chappie&quot;,&quot;assigned_from&quot;:&quot;ajith&quot;,&quot;type&quot;:&quot;ASSIGN&quot;}}</body><markable xmlns="urn:xmpp:chat-markers:0" /></message>
+[04/Jan/2016 14:48:06] INFO - Received Tick
+[04/Jan/2016 14:48:06] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="0d1183a0-39bb-45f2-913d-4b360c782bb1-1451899094349">0d1183a0-39bb-45f2-913d-4b360c782bb1-1451899094349</received></message>
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:48:06] INFO - Displayed Tick
+[04/Jan/2016 14:48:06] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="0d1183a0-39bb-45f2-913d-4b360c782bb1-1451899094349">0d1183a0-39bb-45f2-913d-4b360c782bb1-1451899094349</displayed></message>
+[04/Jan/2016 14:48:06] INFO - Ignoring assignment message.
+[04/Jan/2016 14:49:06] ERROR - Error reading from XML stream.
+[04/Jan/2016 14:49:06] INFO - Waiting for </stream:stream> from server
+[04/Jan/2016 14:49:14] INFO - JID set to: chappie@stage-c.magictiger.com/realm
+[04/Jan/2016 14:49:15] WARNING - TLS or SSL was enabled, but no certificate was found.
+[04/Jan/2016 14:50:14] ERROR - Error reading from XML stream.
+[04/Jan/2016 14:50:14] INFO - Waiting for </stream:stream> from server
+[04/Jan/2016 14:50:28] INFO - JID set to: chappie@stage-c.magictiger.com/realm
+[04/Jan/2016 14:50:28] WARNING - TLS or SSL was enabled, but no certificate was found.
+[04/Jan/2016 14:51:28] ERROR - Error reading from XML stream.
+[04/Jan/2016 14:51:28] INFO - Waiting for </stream:stream> from server
+[04/Jan/2016 14:51:55] INFO - JID set to: chappie@stage-c.magictiger.com/realm
+[04/Jan/2016 14:51:55] WARNING - TLS or SSL was enabled, but no certificate was found.
+[04/Jan/2016 14:51:56] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="10" consumer="52" chat_thread="1088" id="9dad7274-0b34-4a4a-b964-9636719d82f2" to="chappie@stage-c.magictiger.com/realm" sent_on="1451899305428" type="chat" xml:lang="en" mt_routed="true"><body>Hello</body><markable xmlns="urn:xmpp:chat-markers:0" /><delay xmlns="urn:xmpp:delay" stamp="2016-01-04T09:21:45.461Z" from="stage-c.magictiger.com">Offline Storage</delay><x xmlns="jabber:x:delay" stamp="20160104T09:21:45" from="stage-c.magictiger.com">Offline Storage</x></message>
+[04/Jan/2016 14:51:56] INFO - Received Tick
+[04/Jan/2016 14:51:56] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="9dad7274-0b34-4a4a-b964-9636719d82f2">9dad7274-0b34-4a4a-b964-9636719d82f2</received></message>
+[04/Jan/2016 14:51:56] INFO - Displayed Tick
+[04/Jan/2016 14:51:56] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="9dad7274-0b34-4a4a-b964-9636719d82f2">9dad7274-0b34-4a4a-b964-9636719d82f2</displayed></message>
+[04/Jan/2016 14:51:56] INFO - Text message request: Hello
+[04/Jan/2016 14:51:56] INFO - Extracting chat id...
+[04/Jan/2016 14:51:56] INFO - 9845381180
+[04/Jan/2016 14:52:06] INFO - {u'text': u'9845381180', u'length': 10, u'options': [{u'text': u'9845381180', u'score': 1.0, u'payload': {u'id': 52, u'name': u'Ajith Ramanath'}}], u'offset': 0}
+[04/Jan/2016 14:52:06] INFO - [{u'text': u'9845381180', u'score': 1.0, u'payload': {u'id': 52, u'name': u'Ajith Ramanath'}}]
+[04/Jan/2016 14:52:06] INFO - 52
+[04/Jan/2016 14:52:12] INFO - Ajith Ramanath
+[04/Jan/2016 14:52:12] INFO - Name: Ajith
+[04/Jan/2016 14:52:15] INFO - {"account":52,"mobile":"9845381180","name":null,"email":"mail2ajith@gmail.com","profile_data":{"mobile":"9845381180","url":"https://podio.com/magictiger/agent-panel/apps/customer-management/items/1081","name":"Ajith Ramnath","paytm":{"mobile":"9845381180","walletBalance":0,"email":"mail2ajith@gmail.com"}},"devices":[{"id":"493185332f36ec1e","platform":"ANDROID","token":"dK2FwPPvTa4:APA91bFcx6UXuaMybVlzZmp2RRZzKlPEjg2GU84Kc0I8quLkvPC29pHV_iBXBRfa8Xlb21yJejlzzO2L0U2e33tlaX7auQLEp2WxencIanD1tIJrDowrUSYeaDP-H-catVPElFBUgTfh","client_version":20,"location":{"geometry":{"type":"Point","coordinates":[77.6381157,12.9655654]},"type":"Feature","properties":{"updated_on":1451899027165,"accuracy":30.0}},"status":10,"account":52,"created_on":1448607006548,"updated_on":1451899036523}]}
+[04/Jan/2016 14:52:15] INFO - 12.9655654,77.6381157
+[04/Jan/2016 14:52:24] INFO - {u'place_of_worship': u'Temple', u'city': u'Bengaluru', u'state_district': u'Bangalore Urban', u'country': u'India', u'county': u'Bangalore Urban', u'suburb': u'Domlur', u'state': u'Karnataka', u'road': u'Indiranagar Double Road', u'country_code': u'in', u'neighbourhood': u'HAL 2nd Stage', u'postcode': u'560001'}
+[04/Jan/2016 14:52:40] INFO - {'Username': u'Ajith', 'intents': [], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6381157, 12.9655654]}, "type": "Feature", "properties": {"updated_on": 1451899027165, "accuracy": 30.0}}, "zipcode": "560001", "address": {"street": "Temple, Indiranagar Double Road, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': False, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:52:40] INFO - 
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:52:40] INFO - Intent = []
+[04/Jan/2016 14:52:40] INFO - ['routing', 'intent']
+[04/Jan/2016 14:53:07] INFO - <message from="9845381180@stage-c.magictiger.com/mobile" msg_type="10" consumer="52" chat_thread="1088" id="11ec9088-3919-43a4-962d-15b5c24997c3" to="chappie@stage-c.magictiger.com/realm" sent_on="1451899395638" type="chat" xml:lang="en" mt_routed="true"><body>I want to book beauty services</body><markable xmlns="urn:xmpp:chat-markers:0" /></message>
+[04/Jan/2016 14:53:07] INFO - Received Tick
+[04/Jan/2016 14:53:07] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><received xmlns="urn:xmpp:chat-markers:0" id="11ec9088-3919-43a4-962d-15b5c24997c3">11ec9088-3919-43a4-962d-15b5c24997c3</received></message>
+[04/Jan/2016 14:53:07] INFO - Displayed Tick
+[04/Jan/2016 14:53:07] INFO - <message to="9845381180@stage-c.magictiger.com/mobile" from="chappie@stage-c.magictiger.com/realm" xml:lang="en" mt_routed="false" type="chat"><displayed xmlns="urn:xmpp:chat-markers:0" id="11ec9088-3919-43a4-962d-15b5c24997c3">11ec9088-3919-43a4-962d-15b5c24997c3</displayed></message>
+[04/Jan/2016 14:53:07] INFO - Text message request: I want to book beauty services
+[04/Jan/2016 14:53:17] INFO - {'Username': u'Ajith', 'intents': [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6381157, 12.9655654]}, "type": "Feature", "properties": {"updated_on": 1451899027165, "accuracy": 30.0}}, "zipcode": "560001", "address": {"street": "Temple, Indiranagar Double Road, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': False, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:53:17] INFO - want
+Loading brain from bot_brain.brn... done (31 categories in 0.00 seconds)
+Kernel bootstrap completed in 0.00 seconds
+[04/Jan/2016 14:53:17] INFO - Intent = [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}]
+[04/Jan/2016 14:53:17] INFO - []
+[04/Jan/2016 14:53:17] INFO - Routing to human agent now...
+[04/Jan/2016 14:53:18] INFO - Chat id: 1088
+[04/Jan/2016 14:53:18] INFO - Order info: {'Username': u'Ajith', 'intents': [{'category': {'score': 1.0, 'type': 'beauty-services'}, 'subCategory': {'type': 'book beauty services', 'intent': 'want'}}], 'Cityname': '{"tag": "Last Known", "locality": "India/Karnataka/Bengaluru/Domlur", "geo": {"geometry": {"type": "Point", "coordinates": [77.6381157, 12.9655654]}, "type": "Feature", "properties": {"updated_on": 1451899027165, "accuracy": 30.0}}, "zipcode": "560001", "address": {"street": "Temple, Indiranagar Double Road, HAL 2nd Stage, Domlur, Bengaluru, Bangalore Urban, Karnataka, 560001, India"}}', 'routing': True, 'email': u'ajith@magictiger.com, mail2ajith@gmail.com'}
+[04/Jan/2016 14:53:18] INFO - Input team = general
+[04/Jan/2016 14:53:19] INFO - Got list of agents...
+[04/Jan/2016 14:53:19] INFO - Got list of active agents...
+[04/Jan/2016 14:53:24] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:24] INFO - [{u'status': 10, u'id': 9, u'team': u'pilot'}, {u'status': 20, u'id': 8, u'team': u'general'}, {u'status': 20, u'id': 7, u'team': u'general'}]
+[04/Jan/2016 14:53:24] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:53:24] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:53:25] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:25] INFO - []
+[04/Jan/2016 14:53:25] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:25] INFO - []
+[04/Jan/2016 14:53:26] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:26] INFO - []
+[04/Jan/2016 14:53:27] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:27] INFO - [{u'status': 10, u'id': 1, u'team': u'general'}]
+[04/Jan/2016 14:53:27] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:53:27] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:27] INFO - [{u'status': 10, u'id': 10, u'team': u'general'}]
+[04/Jan/2016 14:53:27] INFO - Appending agent to candidate list...
+[04/Jan/2016 14:53:28] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:28] INFO - []
+[04/Jan/2016 14:53:29] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:29] INFO - []
+[04/Jan/2016 14:53:31] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:31] INFO - []
+[04/Jan/2016 14:53:33] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:33] INFO - []
+[04/Jan/2016 14:53:34] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:34] INFO - []
+[04/Jan/2016 14:53:34] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:34] INFO - []
+[04/Jan/2016 14:53:35] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:35] INFO - []
+[04/Jan/2016 14:53:42] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:42] INFO - []
+[04/Jan/2016 14:53:42] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:42] INFO - [{u'status': 10, u'id': 4, u'team': u'pilot'}]
+[04/Jan/2016 14:53:45] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:45] INFO - []
+[04/Jan/2016 14:53:46] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:46] INFO - []
+[04/Jan/2016 14:53:46] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:46] INFO - []
+[04/Jan/2016 14:53:47] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:47] INFO - []
+[04/Jan/2016 14:53:47] INFO - Got agent team/skills...
+[04/Jan/2016 14:53:47] INFO - [{u'status': 10, u'id': 6, u'team': u'pilot'}]
+[04/Jan/2016 14:53:47] INFO - [{u'status': 20, u'username': u'morpheus', u'max_concurrent_chats': 3, u'num_assigned_chats': 0, u'password': u'a53eab49', u'id': 46}, {u'status': 30, u'username': u'ajith', u'max_concurrent_chats': 3, u'num_assigned_chats': 3, u'password': u'144fd25c', u'id': 65}, {u'status': 30, u'username': u'recharge_bot', u'max_concurrent_chats': 65535, u'num_assigned_chats': 184, u'password': u'021c556d', u'id': 170}, {u'status': 30, u'username': u'recharge_bot', u'max_concurrent_chats': 65535, u'num_assigned_chats': 184, u'password': u'021c556d', u'id': 170}]
+[04/Jan/2016 14:53:47] INFO - Agent to route: {"status": 20, "username": "morpheus", "max_concurrent_chats": 3, "num_assigned_chats": 0, "password": "a53eab49", "id": 46}
+[04/Jan/2016 14:54:17] ERROR - Error reading from XML stream.
+[04/Jan/2016 14:54:17] INFO - Waiting for </stream:stream> from server
+[04/Jan/2016 14:54:45] INFO - JID set to: chappie@stage-c.magictiger.com/realm
+[04/Jan/2016 14:54:45] WARNING - TLS or SSL was enabled, but no certificate was found.
+[04/Jan/2016 14:55:45] ERROR - Error reading from XML stream.
+[04/Jan/2016 14:55:45] INFO - Waiting for </stream:stream> from server

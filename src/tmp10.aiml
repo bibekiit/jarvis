@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                    <!-- basic_chat.aiml -->
+                    <aiml>	<category>
+		<pattern>
+			* ORDER COMPLETE 
+		</pattern>
+		<template>
+			here * is intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE NAME UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			* means here intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT NAME UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WELCOME DONE INTENT NAME UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ORDER COMPLETE 
+		</pattern>
+		<template>
+			here * is intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* NAME UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			* means here intent
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* INTENT UNKNOWN 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* INTENT UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* INTENT NAME UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			INTENT NAME UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ORDER COMPLETE 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is name
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* NAME UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			NAME UNKNOWN ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ORDER COMPLETE 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+	<category>
+		<pattern>
+			ROUTING UNKNOWN 
+		</pattern>
+		<template>
+			here * is routing
+		</template>
+	</category>
+</aiml>

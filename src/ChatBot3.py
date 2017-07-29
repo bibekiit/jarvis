@@ -1,0 +1,444 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 15 14:35:58 2016
+
+@author: bibekbehera
+"""
+#from lda_testing import get_topic
+from textblob import TextBlob
+from megamind import megamind
+from gfm import goal_fulfilment_maps
+import os,pickle, math
+import Levenshtein as le
+
+abs_path = os.path.dirname(os.path.abspath('__file__'))
+
+class ChatBot3():
+    def __init__(self):
+        self.fsa = {'states':['St','G','A','S', 'E', 'TS', 'F', 'Di', 'R', 'C', 'D'],
+                    'Transition_type':['','Ex','Gf','De','As','Co','De'],
+                    'Transitions':{'St':{'':['G']},
+                                   'G':{'Ex':['G','E'],'Gf':['E','Di'],'Co':['A'],'De':['A']},
+                                   'E':{'Ex':['E','T'],'As':['E'],'':['D'],'Gf':'S'},
+                                   'A':{'As':['A'],'Ex':['S']}, 
+                                   'S':{'':['D'],'Gf':['C'],'As':['A']},
+                                   'Di':{'':['D'],'Ex':['R']},
+                                   'R':{'Ex':'Di','Gf':['C']},
+                                   'TS':{'Ex':['F','E'],'':['D']}, 
+                                   'F':{'De':'TS','Gf':['C']},
+                                   'D':{},
+                                   'C':{},
+                                   }
+                    }
+        
+        
+        
+        
+class Chat_Interface():
+    def __init__(self,msg,last_topic,cl,last_item, last_score):
+        self.msg = msg
+        self.speech_acts = {"As": ["good", "bad", "incorrect", "lower", "higher", "best", "worst", "invalid", "correct", "incorrect", "wrong", "right", "unable", "able"],
+                            "Di": ["close account", "change mode", "configure account", "change margin", "change portfolio", "change option"],
+                            "Co": ["will cancel account", "will reactivate account", "will de- activate account", "orders will be reinstated", "margin will be restored", "commissions will be removed"],
+                            "Ex": ["done", "glad", "happy", "upset", "unhappy", "unacceptable", "acceptable" ],
+                            "De": ["recharge","book", "need", "require", "want","account is closed","account is reactivated", "account is deactivated", "configuration is changed", "orders are cancelled", "orders are reinstated", "margin is restored"],
+                            "Gf": ["Thanks", "Thank You", "Resolved", "Nothing Else", "That’s All", "I am Good" ],
+                            "": ["hi", "morning", "hello", "halo", "namaste"]
+                            }
+        self.speech_acts_priority = ["","De","Ex","Di","As","Co","Gf"]
+        self.last_topic = last_topic
+        self.cl = cl
+        self.last_item = last_item
+        self.last_score = last_score
+        
+    def getLevenshteinEquivalentWord(self,word1,word2,threshold):
+        if isinstance(word1, unicode) and isinstance(word2, unicode):
+            if le.distance(word1.encode('ascii','ignore'), word2.encode('ascii','ignore')) <= threshold:
+                return True, word2.encode('ascii','ignore')
+        if isinstance(word1, unicode) and not isinstance(word2, unicode):
+            if le.distance(word1.encode('ascii','ignore'), word2) <= threshold:
+                return True, word2
+        if not isinstance(word1, unicode) and isinstance(word2, unicode):
+            if le.distance(word1, word2.encode('ascii','ignore')) <= threshold:
+                return True, word2.encode('ascii','ignore')
+        if not isinstance(word1, unicode) and not isinstance(word2, unicode):
+            if le.distance(word1, word2) <= threshold:
+                return True, word2
+        return False, ''
+    
+    def levenshteinComparison(self, string, list_of_words):
+        blob = TextBlob(string)        
+        status = False
+        original_word = ''
+        match = ''
+        len_match = 0       
+        state_match = True
+        for i in list_of_words:
+            for j in blob.ngrams(len(i.split())):
+                status, word = self.getLevenshteinEquivalentWord((' '.join(j)).lower(),i.lower(),1)
+                if status: 
+                    if len(i)>len_match:
+                        state_match = status
+                        len_match = len(i)
+                        original_word = ' '.join(j)
+                        match = word
+                        #print word
+                    
+        if state_match:
+            return True, original_word, match
+        
+        return False, '', ''
+        
+    def Speech_Act_Identifier(self):
+        speech_type = ''     
+        len_match = 0
+        for j in self.speech_acts.keys():
+            flag, orig, match = self.levenshteinComparison(self.msg,self.speech_acts[j])
+            if flag:
+                curr_len_match = len(orig)
+                if curr_len_match > len_match:
+                    self.msg = self.msg.replace(orig, match)  
+                    speech_type = j
+                
+        return speech_type #eg Expressive
+        
+    def Speech_Act_Identifier_Fallback(self,msg):
+        speech_type = ""
+        for i in self.speech_acts:
+            for expr in self.speech_acts[i]:
+                if expr in msg:
+                    speech_type = i
+                    
+        return speech_type #eg Expressive
+        
+    def Sentiment_Identifier(self):
+        blob = TextBlob(self.msg)
+        polarity = 1.0
+        for sentence in blob.sentences:
+            polarity *= sentence.sentiment.polarity
+        if polarity > 0:
+            sentiment_type = 'pos'
+        elif polarity == 0:
+            sentiment_type = 'neutral'
+        else:
+            sentiment_type = 'neg'
+        
+        return sentiment_type, polarity #eg sentiment
+        
+    def Topic_Identifier(self):
+        topic = get_topic(self.msg)
+        return topic #eg new account
+        
+    def Intent(self):
+        m = megamind(self.cl)
+        topic,score, intent_dic = m.getIntent(self.msg, self.last_topic,self.last_item,self.last_score)
+        return topic, score, intent_dic
+        
+    def Chat_Interface_caller(self):
+        speech_type = self.Speech_Act_Identifier()
+        sentiment_type = self.Sentiment_Identifier()
+        #topic_type = self.Topic_Identifier()
+        topic_type,score, intent = self.Intent()
+        #goal_fulfilment_map = HT(topic_type, speech_type, sentiment_type)
+        return speech_type, sentiment_type, topic_type, score, intent
+        
+class Conversation_Engine():
+        
+    def __init__(self):    
+        self.conversation_type = ['Procedural','Informational','TroubleShooting','DisputeResolution']
+        self.conversation_type_score = {}
+        self.state = {}
+        
+        for i in self.conversation_type:         
+            self.conversation_type_score[i] = 0.0
+            self.state[i] = ['St','St']
+            
+        
+        self.state_diagram_conversation_type = {'Procedural':{'St':{'De':'G','':'G'},
+                                                               'G':{'Ex':'G','Co':'A','De':'A'},
+                                                               'A':{'As':'A','Ex':'S','De':'A'}, 
+                                                               'S':{'':'D','Gf':'C','As':'A','Ex':'S'},
+                                                               'D':{},
+                                                               'C':{},
+                                                              },
+                                                              
+                                                'Informational':{'St':{'':'G'},
+                                                               'G':{'Gf':'E'},
+                                                               'E':{'Ex':'E','As':'E','':'D','Gf':'S'},
+                                                               'S':{'Gf':'C'},
+                                                               'D':{},
+                                                               'C':{},
+                                                              },
+                                                'TroubleShooting':{'St':{'':'G'},
+                                                               'G':{'Ex':'G','Gf':'E'},
+                                                               'E':{'As':'E','Gf':'TS'},
+                                                               'TS':{'Ex':'F','':'D'}, 
+                                                               'F':{'De':'TS','Gf':'C'},
+                                                               'D':{},
+                                                               'C':{},
+                                                              },
+                                                'DisputeResolution':{'St':{'':'G'},
+                                                               'G':{'Ex':'G','Gf':'Di','As':'Di'},
+                                                               'Di':{'':'D','Ex':'R'},
+                                                               'R':{'De':'Di','Gf':'C'},
+                                                               'D':{},
+                                                               'C':{},
+                                                              }
+                                            }
+    
+    def Conversation_planner(self, speech_type):
+        for i in self.conversation_type:
+            curr_state = self.state[i][1]
+            if speech_type not in self.state_diagram_conversation_type[i][curr_state].keys():
+                next_state = curr_state
+                self.conversation_type_score[i] -= 1
+            else:                
+                next_state = self.state_diagram_conversation_type[i][curr_state][speech_type]
+                self.conversation_type_score[i] += 3
+            #score = self.conversation_type_score[i]
+            #self.conversation_type_score[i] = self.likeness_score(curr_state, next_state, score)
+            self.state[i] = [curr_state,next_state]
+        #return transition_type, likeness_score, counter
+        
+    def find_top_two_scores(self):
+        score_list = [self.conversation_type_score[i] for i in self.conversation_type]
+        score_list.sort(reverse=True)
+        return score_list[0],score_list[1]
+        
+    def Workspace_pop(self, remove_list):
+        for chat_type in remove_list:
+            self.conversation_type.remove(chat_type)
+            self.conversation_type_score.pop(chat_type)
+            self.state.pop(chat_type)
+        
+    def Workspace_keep(self, chat_type):
+        for i in self.conversation_type:
+            if i!=chat_type:
+                self.conversation_type_score.pop(i)
+                self.state.pop(i)
+        self.conversation_type = [chat_type]
+        
+    def WorkSpaceUpdate(self):
+        conversation_type = self.conversation_type
+        conversation_type_score = self.conversation_type_score
+        if len(conversation_type)>1:
+            highest_score, next_highest_Score = self.find_top_two_scores()
+                
+        #print "&"*5, conversation_type, conversation_type_score.keys()
+        remove_list = []
+        
+        for i in conversation_type:
+            #print "***", i
+            score = conversation_type_score[i]
+            #print "*"*10,i,score, type(score)
+            if score < 0:
+                remove_list.append(i)
+                
+            elif len(conversation_type)>1:
+                highest_score, next_highest_Score = self.find_top_two_scores()
+                if score > 4*next_highest_Score:
+                    self.Workspace_keep(i)
+                    return
+        self.Workspace_pop(remove_list)
+    
+    def Call_Conversation_Planner(self,speech_Act):
+        self.Conversation_planner(speech_Act)
+        #print self.conversation_type_score
+        self.WorkSpaceUpdate()
+        #print self.conversation_type_score,self.state
+        
+    def Get_Prob_Conversation_Type(self):
+        d = self.conversation_type_score
+        sorted_x = sorted(d, key = d.get, reverse=True)
+        probable_Converation_Type = sorted_x[0]
+        return probable_Converation_Type
+        
+    def Get_Conversation_Type(self):
+        s = self.state
+        probable_Converation_Type = self.Get_Prob_Conversation_Type()
+        if s[probable_Converation_Type][1]=='G':
+            probable_Converation_Type = 'Greeting'
+        elif s[probable_Converation_Type][1]=='C' or s[probable_Converation_Type][1]=='D':
+            probable_Converation_Type = 'Ending'
+        return probable_Converation_Type
+        
+                
+class Knowledge_Engine():
+    
+    def __init__(self):
+        self.GFM_HT = {'recharge':{'Greeting':'recharge_gre','Informational':'recharge_inf','Procedural':'recharge_pro','DisputeResolution':'recharge_dr','TroubleShooting':'recharge_ts','Ending':'recharge_end'},
+                        'utility-and-bills':{'Greeting':'unb_gre','Informational':'unb_inf','Procedural':'unb_pro','DisputeResolution':'unb_dr','TroubleShooting':'unb_ts','Ending':'unb_end'},
+                        'other':{'Greeting':'o_gre','Informational':'o_inf','Procedural':'o_pro','DisputeResolution':'o_dr','TroubleShooting':'o_ts','Ending':'o_end'}      
+        }
+        self.gfm_machine = goal_fulfilment_maps()
+        
+        
+        
+    def Goal_fulfilment_map(self):
+        try:
+            self.gfm = self.GFM_HT[self.topic][self.conversation]
+        except KeyError:
+            self.gfm = self.GFM_HT['other'][self.conversation]
+        
+    def call_function(self):
+        #print "Selected goal fulfilment map:", self.gfm
+        if self.gfm == 'recharge_gre':
+            return self.gfm_machine.recharge_gre(self.speech_Act,self.intent)
+        elif self.gfm == 'recharge_inf':
+            return self.gfm_machine.recharge_inf()
+        elif self.gfm == 'recharge_pro':
+            return self.gfm_machine.recharge_pro(self.speech_Act,self.intent)
+        elif self.gfm == 'recharge_dr':
+            return self.gfm_machine.recharge_dr()
+        elif self.gfm == 'recharge_ts':
+            return self.gfm_machine.recharge_ts()
+        elif self.gfm == 'recharge_end':
+            return self.gfm_machine.recharge_end()
+        elif self.gfm == 'unb_gre':
+            return self.gfm_machine.unb_gre(self.speech_Act,self.intent)
+        elif self.gfm == 'unb_inf':
+            return self.gfm_machine.unb_inf()
+        elif self.gfm == 'unb_pro':
+            return self.gfm_machine.unb_pro(self.speech_Act,self.intent) 
+        elif self.gfm == 'unb_dr':
+            return self.gfm_machine.unb_dr() 
+        elif self.gfm == 'unb_ts':
+            return self.gfm_machine.unb_ts()
+        elif self.gfm == 'unb_end':
+            return self.gfm_machine.unb_end()
+        elif self.gfm == 'o_gre':
+            return self.gfm_machine.o_gre(self.speech_Act,self.intent)
+        elif self.gfm == 'o_inf':
+            return self.gfm_machine.o_inf()
+        elif self.gfm == 'o_pro':
+            return self.gfm_machine.o_pro(self.speech_Act,self.intent) 
+        elif self.gfm == 'o_dr':
+            return self.gfm_machine.o_dr() 
+        elif self.gfm == 'o_ts':
+            return self.gfm_machine.o_ts()
+        elif self.gfm == 'o_end':
+            return self.gfm_machine.o_end()
+        else:
+            print "Output of gfm:" + self.gfm + " not found"
+                              
+        
+    def Reply(self,conversation_type,speech_type, sentiment_type, topic_type, intent): #required speech_act and topic as input
+        self.topic = topic_type
+        self.conversation = conversation_type
+        self.speech_Act = speech_type
+        self.intent = intent
+        
+        self.Goal_fulfilment_map()
+        #print self.gfm
+        return self.call_function()
+        
+        
+        
+class chat_Enabler():
+    def __init__(self):
+        self.CE = Conversation_Engine()
+        self.KE = Knowledge_Engine()
+        self.last_topic = ""
+        self.last_item = ""
+        self.last_score = 0.0
+#    def test_procedure(c,speech_Act):
+#        c.Conversation_planner(speech_Act)
+#        print c.conversation_type_score
+#        c.WorkSpaceUpdate()
+#        print c.conversation_type_score,c.state
+#    
+    
+    def process(self,msg,order_list,cl):
+        
+        CI = Chat_Interface(msg,self.last_topic,cl, self.last_item, self.last_score)
+        speech_type, sentiment_type, topic_type, score, intent = CI.Chat_Interface_caller()
+        #print 'last_Cateogory: '+self.last_topic
+        #print 'last_score:',self.last_score
+        if speech_type == '' and order_list!= {} and order_list.has_key(topic_type) and order_list[topic_type]['INTENT']!='':
+            speech_type = CI.Speech_Act_Identifier_Fallback(order_list[topic_type]['INTENT'])
+        #print "Output of chat_interface:",speech_type, sentiment_type, topic_type, intent
+        self.last_topic = topic_type
+        self.last_score = score
+        #print "Output of conversation enginer:"
+        #print "-----------------------------------"
+        self.CE.Call_Conversation_Planner(speech_type)
+        conversation_type = self.CE.Get_Conversation_Type()
+        #print "Type of conversation:", conversation_type
+        #print "###################################"
+        #print "Output of Knowledge engine:"
+        #test_procedure(CE,speech_Act)
+        reply, self.last_item = self.KE.Reply(conversation_type,speech_type, sentiment_type, topic_type, intent)
+        #print "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"  
+        return reply
+        
+class main():
+    def __init__(self):
+        self.CE = chat_Enabler()
+        self.order_list= {}
+        with open(abs_path + "/../data/tagged_data_classifier.pkl", 'rb') as fid:
+            self.cl = pickle.load(fid)
+    
+    def make_conversation(self,msg):
+        print "-----------------------------"
+        print "CUSTOMER: " + msg
+        print "AGENT: " + self.CE.process(msg,self.order_list,self.cl)
+        print "*****************************"
+        self.order_list = self.CE.KE.gfm_machine.order_fulfilment_list
+        print self.order_list
+        
+    
+    def test_chat_enabler(self):
+        self.make_conversation("hi")
+        self.make_conversation("recharge my phone")
+        self.make_conversation("10 rs 9439733999 topup postpaid Bibek")
+        self.make_conversation("I am done")
+        self.make_conversation("Thanks")
+        self.CE.KE.gfm_machine.order_fulfilment_list.pop('others')
+        return self.CE.KE.gfm_machine.order_fulfilment_list
+    
+    def chat_bot(self):
+        while(self.CE.CE.Get_Conversation_Type()!='Ending'):
+            msg = raw_input('Customer:')
+            reply = self.CE.process(msg,self.order_list,self.cl)
+            self.order_list = self.CE.KE.gfm_machine.order_fulfilment_list
+            print "Agent:", reply
+        return self.order_list
+            
+m = main()
+
+print "This is a test example"
+m.test_chat_enabler()
+
+print "Now you can test the bot"
+m.chat_bot()
+    
+    
+
+#    test_procedure(c,'De')
+#
+#    test_procedure(c,'As')
+#
+#    test_procedure(c,'Ex') 
+#    
+#    test_procedure(c,'As')
+#
+#    test_procedure(c,'Ex')
+#    
+#    test_procedure(c,'As')
+#
+#    test_procedure(c,'Ex')
+#    
+#    test_procedure(c,'As')
+#
+#    test_procedure(c,'Ex')
+#    
+#    test_procedure(c,'Gf')
+
+            
+        
+        
+                        
+
+
+        
+    

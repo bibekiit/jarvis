@@ -1,0 +1,61 @@
+{
+  "stage" : {
+    "jid" : "jarvis2@stage-c.magictiger.com/realm",
+    "password" : "6c0b7afajar",
+    "bot_id" : 115,
+    "agents_url" : "https://stage-api.magictiger.com/messaging/agents/",
+    "skills_url" : "http://stage-profiles.magictiger.com/agents/",
+    "cust_id_url" : "http://stage-realm.magictiger.com/api/profiles/consumers/autocomplete/?text=",
+    "profiles_url" : "https://stage-api.magictiger.com/profiles/consumers/",
+    "locn_url" : "http://stage-realm.magictiger.com/api/accounts/consumer/",
+    "me_url" : "http://stage-realm.magictiger.com/api/messaging/agents/me/",
+    "chat_url" : "http://stage-realm.magictiger.com/api/messaging/chats/",
+    "form_url" : "http://stage-forms.magictiger.com/dynamicformclass/",
+    "http_header" : {
+      "Authorization": "e2e77bd0-8725-42ef-adee-96cd480460dc",
+      "Content-Type": "application/json"
+    },
+    "log_level" : "logging.DEBUG",
+    "log_fmt" : "%(levelname)-8s %(message)s"
+  },
+
+  "prod" : {
+    "jid" : "jarvis2@c.magictiger.com/realm",
+    "password" : "b5957bbcjar",
+    "bot_id" : 16740,
+    "agents_url" : "https://api.magictiger.com/messaging/agents/",
+    "skills_url" : "http://profiles.magictiger.com/agents/",
+    "cust_id_url" : "http://realm.magictiger.com/api/profiles/consumers/autocomplete/?text=",
+    "profiles_url" : "https://api.magictiger.com/profiles/consumers/",
+    "locn_url" : "http://realm.magictiger.com/api/accounts/consumer/",
+    "me_url" : "http://realm.magictiger.com/api/messaging/agents/me/",
+    "chat_url" : "http://realm.magictiger.com/api/messaging/chats/",
+    "form_url" : "http://forms.magictiger.com/dynamicformclass/",
+    "http_header" : {
+      "Authorization": "651f6aeb-3713-4c06-920f-e3c33ccb2650",
+      "Content-Type": "application/json"
+    },
+    "log_level" : "logging.DEBUG",
+    "log_fmt" : "%(levelname)-8s %(message)s"
+  },
+
+  "local" : {
+    "jid" : "chappie@stage-c.magictiger.com/realm",
+    "password" : "99b9b9accha",
+    "bot_id" : 39,
+    "agents_url" : "https://stage-api.magictiger.com/messaging/agents/",
+    "skills_url" : "http://stage-profiles.magictiger.com/agents/",
+    "cust_id_url" : "http://stage-realm.magictiger.com/api/profiles/consumers/autocomplete/?text=",
+    "profiles_url" : "https://stage-api.magictiger.com/profiles/consumers/",
+    "locn_url" : "http://stage-realm.magictiger.com/api/accounts/consumer/",
+    "me_url" : "http://stage-realm.magictiger.com/api/messaging/agents/me/",
+    "chat_url" : "http://stage-realm.magictiger.com/api/messaging/chats/",
+    "form_url" : "http://stage-forms.magictiger.com/dynamicformclass/",
+    "http_header" : {
+      "Authorization": "e2e77bd0-8725-42ef-adee-96cd480460dc",
+      "Content-Type": "application/json"
+    },
+    "log_level" : "logging.DEBUG",
+    "log_fmt" : "%(levelname)-8s %(message)s"
+  }
+}

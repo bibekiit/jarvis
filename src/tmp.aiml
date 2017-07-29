@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                    <!-- basic_chat.aiml -->
+                    <aiml>	<category>
+		<pattern>
+			* WELCOME DONE ORDER COMPLETE 1 
+		</pattern>
+		<template>
+			Hi <set name = "customer"><star/></set>! Welcome to Magictiger! Sure, please give me a minute to serve you...
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE ORDER COMPLETE 2 
+		</pattern>
+		<template>
+			Hi <set name = "customer"><star/></set>! Welcome to Magictiger! Sure, please give me a minute to serve you...
+
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* WELCOME DONE ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi <set name = "customer"><star/></set>! Welcome to Magictiger! Sure, please give me a minute to serve you...
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi <set name = "customer"><star/></set>! Welcome to Magictiger! Sure, please give me a minute to serve you...
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			WELCOME DONE NAME UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! Sure can you please let me know your name? 
+
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WELCOME DONE NAME UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! Sure can you please let me know your name? 
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today, <set name = "customer"><star/></set>? 
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today, <set name = "customer"><star/></set>? 
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today, <set name = "customer"><star/></set>? 
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* WELCOME DONE INTENT UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today, <set name = "customer"><star/></set>? 
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			WELCOME DONE INTENT NAME UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today? 
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WELCOME DONE INTENT NAME UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today? 
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			WELCOME DONE INTENT NAME UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today? 
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WELCOME DONE INTENT NAME UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			Hi! Welcome to Magictiger! How may I help you today? 
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* ORDER COMPLETE 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ORDER COMPLETE 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			NAME UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name? </li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			NAME UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name?</li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* INTENT UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Good to hear from you <set name = "customer"><star/></set>! How may I help you today?</li>
+				<li>Please let me know how may I help you today, <set name = "customer"><star/></set>?</li>
+				<li>How may I help you today, <set name = "customer"><star/></set>?</li>
+				<li><set name = "customer"><star/></set>, please let me know how you would like me to help...</li>
+				<li>What can I do for you today, <set name = "customer"><star/></set>?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* INTENT UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Good to hear from you <set name = "customer"><star/></set>! How may I help you today?</li>
+				<li>Please let me know how may I help you today, <set name = "customer"><star/></set>?</li>
+				<li>How may I help you today, <set name = "customer"><star/></set>?</li>
+				<li><set name = "customer"><star/></set>, please let me know how you would like me to help...</li>
+				<li>What can I do for you today, <set name = "customer"><star/></set>?</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			* INTENT UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Good to hear from you <set name = "customer"><star/></set>! How may I help you today?</li>
+				<li>Please let me know how may I help you today, <set name = "customer"><star/></set>?</li>
+				<li>How may I help you today, <set name = "customer"><star/></set>?</li>
+				<li><set name = "customer"><star/></set>, please let me know how you would like me to help...</li>
+				<li>What can I do for you today, <set name = "customer"><star/></set>?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* INTENT UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Good to hear from you <set name = "customer"><star/></set>! How may I help you today?</li>
+				<li>Please let me know how may I help you today, <set name = "customer"><star/></set>?</li>
+				<li>How may I help you today, <set name = "customer"><star/></set>?</li>
+				<li><set name = "customer"><star/></set>, please let me know how you would like me to help...</li>
+				<li>What can I do for you today, <set name = "customer"><star/></set>?</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			INTENT NAME UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Please let me know how may I help you today?</li>
+				<li>How may I help you today?</li>
+				<li>Please let me know how you would like me to help...</li>
+				<li>What can I do for you today?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			INTENT NAME UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Please let me know how may I help you today?</li>
+				<li>How may I help you today?</li>
+				<li>Please let me know how you would like me to help...</li>
+				<li>What can I do for you today?</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			INTENT NAME UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Please let me know how may I help you today?</li>
+				<li>How may I help you today?</li>
+				<li>Please let me know how you would like me to help...</li>
+				<li>What can I do for you today?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			INTENT NAME UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Please let me know how may I help you today?</li>
+				<li>How may I help you today?</li>
+				<li>Please let me know how you would like me to help...</li>
+				<li>What can I do for you today?</li>
+			</random>
+		</template>
+	</category>
+	
+	
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			* ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, <set name = "customer"><star/></set>. Let me help you with that. Please give me a moment...</li>
+				<li>Sure, let me help you with that. Please give me a moment, <set name = "customer"><star/></set>...</li>
+				<li>Ok, sure, let me help you with that <set name = "customer"><star/></set>. Please give me a moment...</li>
+				<li>Sure <set name = "customer"><star/></set>, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that, <set name = "customer"><star/></set>. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			NAME UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name?</li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			NAME UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name?</li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>
+			NAME UNKNOWN ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name?</li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			NAME UNKNOWN ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, can you please let me know your name?</li>
+				<li>Okay, please let me know your name...</li>
+				<li>Sure, can you please let me know your full name?</li>
+				<li>Okies! Can you please let me know your name?</li>
+			</random>
+		</template>
+	</category>
+	
+	
+	<category>
+		<pattern>
+			ROUTING UNKNOWN 1 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, let me help you with that. Please give me a moment...</li>
+				<li>Ok, sure, let me help you with that. Please give me a moment...</li>
+				<li>Sure, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>
+			ROUTING UNKNOWN 2 
+		</pattern>
+		<template>
+			<random>
+				<li>Sure, let me help you with that. Please give me a moment...</li>
+				<li>Ok, sure, let me help you with that. Please give me a moment...</li>
+				<li>Sure, please give me a moment to process this...</li>
+				<li>Okies! Let me help you with that. Please give me a moment...</li>
+			</random>
+		</template>
+	</category>
+	
+      <category>
+        <pattern>DIRECT HIM TO THE AGENT</pattern>
+        <template>
+            Sure, please give me a minute to serve you.
+        </template>
+     </category>
+</aiml>

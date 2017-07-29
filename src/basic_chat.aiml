@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- basic_chat.aiml -->
+<aiml>
+    <category>
+        <pattern>* WELCOME MESSAGE ORDER COMPLETE</pattern>
+        <template>
+            Hi <set name = "customer"><star/></set>. Welcome to Magictiger! Sure, please give me a minute to serve you.
+        </template>
+    </category>
+    <category>
+        <pattern>* WELCOME MESSAGE INTENT COMPLETE</pattern>
+        <template>
+            Hi <set name = "customer"><star/></set>. Welcome to Magictiger! Thanks for contacting us.
+        </template>
+    </category>
+    <category>
+        <pattern>* WELCOME MESSAGE INTENT REQUIRED</pattern>
+        <template>
+            Hi <set name = "customer"><star/></set>. Welcome to Magictiger! How may I help you today?
+        </template>
+    </category>
+    <category>
+        <pattern>* WELCOME MESSAGE CITYNAME REQUIRED</pattern>
+        <template>
+            Hi <set name = "customer"><star/></set>. Welcome to Magictiger! Can you please let me now your location/city?
+        </template>
+    </category>
+    <category>
+        <pattern>WELCOME MESSAGE PROVIDE USERNAME INTENT GIVEN</pattern>
+        <template>
+             Welcome to Magictiger! Sure, let me help you with that. Can you please let me know your name?
+        </template>
+    </category>
+    <category>
+        <pattern>WELCOME MESSAGE PROVIDE USERNAME</pattern>
+        <template>
+             Welcome to Magictiger! Can you please let me know your name?
+        </template>
+    </category>
+    <category>
+        <pattern>WELCOME MESSAGE USERNAME CITYNAME REQUIRED</pattern>
+        <template>
+            Welcome to Magictiger! Can you please let me know your name and location/city?
+        </template>
+    </category>
+
+    <category>
+        <pattern>WELCOME MESSAGE USERNAME CITYNAME REQUIRED INTENT GIVEN</pattern>
+        <template>
+             Welcome to Magictiger! Sure, now, can you please let me know your name and location/city?
+        </template>
+    </category>
+
+    <!-- Add the below condition to the code-->
+    <category>
+        <pattern>WELCOME MESSAGE CITYNAME REQUIRED INTENT GIVEN</pattern>
+        <template>
+             Welcome to Magictiger! Sure, now, can you please let me know your location/city?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* ORDER COMPLETE</pattern>
+        <template>
+            Sure <set name = "customer"><star/></set>. Please give me a minute to serve you.
+ 
+        </template>
+    </category>
+    <!--    
+    <category>
+        <pattern>* ROUTING LEFT</pattern>
+        <template>
+            
+        </template>
+    </category>
+    -->
+
+
+    <category>
+        <pattern>* INTENT REQUIRED</pattern>
+        <template>
+            <set name = "customer"><star/></set>, how may I help you today?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* CITYNAME REQUIRED</pattern>
+        <template>
+            <set name = "customer"><star/></set>, can you please let me know your location/city?
+        </template>
+    </category>
+
+    <category>
+        <pattern>PROVIDE USERNAME ORDER COMPLETE</pattern>
+        <template>
+            Alright! Now, can you also please let me know your name?
+        </template>
+    </category>
+    
+
+    <category>
+        <pattern>PROVIDE USERNAME INTENT GIVEN</pattern>
+        <template>
+            Sure, let me help. Can you please let me know your name?
+        </template>
+    </category>
+
+    <category>
+        <pattern>PROVIDE USERNAME</pattern>
+        <template>
+            Can you please let me know your name?
+        </template>
+    </category>
+
+    <category>
+        <pattern>PROVIDE USERNAME CITYNAME INTENT GIVEN</pattern>
+        <template>
+            Sure, thanks for that information. Can you please let me know your name?
+        </template>
+    </category>
+    <category>
+        <pattern>PROVIDE USERNAME CITYNAME ROUTING DONE</pattern>
+        <template>
+            Sure, lastly, can you please let me know your name and city?
+        </template>
+    </category>
+    <category>
+        <pattern>PROVIDE USERNAME CITYNAME ROUTING REQUIRED</pattern>
+        <template>
+            Can you also please let me know your name and location/city?
+        </template>
+    </category>
+
+    <category>
+        <pattern>ORDER COMPLETE</pattern>
+        <template>
+            Sure, please give me a minute to serve you.
+        </template>
+    </category>
+    <category>
+        <pattern>* ROUTING LEFT</pattern>
+        <template>
+            <random>
+                <li> Ok, is there anything else I can do for you? </li>
+                <li> Sure, is there anything else that I can do for you, <set name = "customer"><star/></set>?</li>
+                <li> Alright, is there anything else, <set name = "customer"><star/></set>? </li>
+                <li> Okay, is that all, <set name = "customer"><star/></set>? </li>
+                <li> Ok, anything else, <set name = "customer"><star/></set>? </li>
+                <li> Got it! Is there anything else, <set name = "customer"><star/></set>? </li>
+                <li> Sure, <set name = "customer"><star/></set>, is there anything else? </li>
+            </random>        
+        </template>
+    </category>
+    
+
+    <category>
+        <pattern>* INTENT REQUIRED</pattern>
+        <template>
+            <random>
+                <li> <set name = "customer"><star/></set>, how may I help you today? </li>
+                <li> What can I do for you, <set name = "customer"><star/></set> </li>
+                <li> How may I help you, <set name = "customer"><star/></set>? </li>
+            </random>           
+                
+        </template>
+    </category>
+    <category>
+        <pattern>CITYNAME REQUIRED</pattern>
+        <template>
+            Can you please let me know your location/city?
+        </template>
+    </category>
+
+    <category>
+        <pattern>DIRECT HIM TO THE AGENT</pattern>
+        <template>
+            Sure, please give me a minute to serve you.
+        </template>
+    </category>
+</aiml>
